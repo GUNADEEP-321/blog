@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechBlog - Article Reader</title>
+    <meta name="description" content="TechBlog – Your ultimate destination for tech articles">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="article-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <img src="logo-icon.svg" alt="TechBlog Logo" class="logo-icon">
+                        <span>TechBlog</span>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html#articles" class="nav-link">Articles</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Article Content -->
+    <main class="article-main">
+        <div class="container">
+            <!-- Article Header -->
+            <article class="article-content" id="articleContent">
+                <div class="article-header">
+                    <div class="article-meta">
+                        <span class="article-category" id="articleCategory">Technology</span>
+                        <span class="article-date" id="articleDate">January 1, 2025</span>
+                        <span class="article-read-time" id="articleReadTime">5 min read</span>
+                    </div>
+                    <h1 class="article-title" id="articleTitle">Loading Article...</h1>
+                    <div class="article-author">
+                        <div class="author-info">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-details">
+                                <span class="author-name" id="articleAuthor">Author Name</span>
+                                <span class="author-bio">Tech enthusiast and developer</span>
+                            </div>
+                        </div>
+                        <div class="article-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-eye"></i>
+                                <span id="articleViews">0</span>
+                            </span>
+                            <span class="stat-item">
+                                <i class="fas fa-heart"></i>
+                                <span id="articleLikes">0</span>
+                            </span>
+                            <span class="stat-item">
+                                <i class="fas fa-comment"></i>
+                                <span id="articleComments">0</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article Body -->
+                <div class="article-body">
+                    <div class="article-content-text" id="articleContentText">
+                        <div class="loading-placeholder">
+                            <div class="placeholder-line"></div>
+                            <div class="placeholder-line"></div>
+                            <div class="placeholder-line"></div>
+                            <div class="placeholder-line"></div>
+                            <div class="placeholder-line"></div>
+                        </div>
+                    </div>
+
+                    <!-- Article Tags -->
+                    <div class="article-tags" id="articleTags">
+                        <!-- Tags will be populated here -->
+                    </div>
+
+                    <!-- Article Actions -->
+                    <div class="article-actions">
+                        <button class="btn btn-primary" id="likeBtn">
+                            <i class="fas fa-heart"></i>
+                            <span>Like Article</span>
+                        </button>
+                        <button class="btn btn-secondary" id="shareBtn">
+                            <i class="fas fa-share"></i>
+                            <span>Share</span>
+                        </button>
+                        <button class="btn btn-outline" id="bookmarkBtn">
+                            <i class="fas fa-bookmark"></i>
+                            <span>Bookmark</span>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Related Articles -->
+            <section class="related-articles">
+                <h2 class="section-title">Related Articles</h2>
+                <div class="related-grid" id="relatedArticles">
+                    <!-- Related articles will be populated here -->
+                </div>
+            </section>
+
+            <!-- Comments Section -->
+            <section class="comments-section">
+                <h2 class="section-title">Comments</h2>
+                <div class="comment-form">
+                    <textarea id="commentInput" placeholder="Share your thoughts on this article..." rows="4"></textarea>
+                    <button class="btn btn-primary" id="submitComment">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Post Comment</span>
+                    </button>
+                </div>
+                <div class="comments-list" id="commentsList">
+                    <!-- Comments will be populated here -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Table of Contents Sidebar -->
+    <aside class="toc-sidebar" id="tocSidebar">
+        <div class="toc-header">
+            <h3>Table of Contents</h3>
+            <button class="toc-close" id="tocClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="toc-nav" id="tocNav">
+            <!-- Table of contents will be generated here -->
+        </nav>
+    </aside>
+
+    <!-- Progress Bar -->
+    <div class="reading-progress" id="readingProgress"></div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay active" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">Loading article...</p>
+        </div>
+    </div>
+
+    <script src="articles-data.js"></script>
+    <script src="article_page.js"></script>
+</body>
+</html>
